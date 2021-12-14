@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>IMC</title>
+</head>
+<body>
+    <h2>Cálcular IMC</h2>
+    <p id="resp"></p>
+    Peso (kg): <input type="text" name="v1" id="v1"><br>
+    Estatura (m): <input type="text" name="v2" id="v2"><br><br>    
+    <button onclick="calcular();">IMC</button><input type="text" name="res" id="res"><br><br>
+    Categoría: <input type="TEXT" name="v3" id="v3"><br>
+
+    <script type="text/javascript">
+
+        function calcular(){
+            let v1=document.getElementById('v1').value;
+            let v2=document.getElementById('v2').value;
+            let vv1=parseInt(v1,10);
+            let vv2=parseInt(v2,10);
+            let res=v1/(v2*v2);
+            let ress="";
+
+            document.getElementById('res').value=res
+
+            if(res<=18.5){
+                res="Peso inferior al normal";
+            }else if(res>=18.5&&res<=24.9){
+                res="Peso normal";
+            }else if(res>=25&&res<=29.9){
+                res="Peso superior al normal";
+            }else{
+                res="Obesidad";
+                alert("Deja de comer los postres");
+            }
+            document.getElementById('v3').value=res
+            }
+    </script>
+</body>
+</html>
